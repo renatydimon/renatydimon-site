@@ -47,6 +47,21 @@
     z-index: 1;
   }
 
+  /* ── LOGO TOPO CÍRCULO ESTELAR ── */
+  .logo-topo {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 0;
+  }
+
+  .logo-topo img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+  }
+
   /* ── WRAPPER CENTRAL ── */
   .wrapper {
     flex: 1;
@@ -54,40 +69,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 48px 24px 0;
+    padding: 24px 24px 0;
     text-align: center;
     position: relative;
     z-index: 1;
   }
 
-  /* ── LOGO ── */
-  .logo-circulo {
-    width: 220px;
-    height: auto;
-    object-fit: contain;
-    mix-blend-mode: multiply;
-    filter: brightness(0.95);
-    margin-bottom: 12px;
-  }
-
   /* ── NOME ── */
   .entrada-nome {
-    font-size: clamp(18px, 2.5vw, 28px);
+    font-size: clamp(14px, 2vw, 18px);
     font-weight: 600;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 40px;
-  }
-
-  /* ── TAG ── */
-  .entrada-tag {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--ambar-medio);
-    margin-top: 36px;
-    margin-bottom: 10px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 36px;
   }
 
   /* ── TÍTULO ── */
@@ -104,6 +99,17 @@
   .entrada-titulo .gold {
     color: var(--ambar-claro);
     text-shadow: 0 0 30px rgba(232,168,76,0.35), 0 0 60px rgba(232,168,76,0.15);
+  }
+
+  /* ── TAG ── */
+  .entrada-tag {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--ambar-medio);
+    margin-top: 4px;
+    margin-bottom: 16px;
   }
 
   /* ── SUBTÍTULO ── */
@@ -125,7 +131,7 @@
     max-width: 360px;
   }
 
-  /* Botão primário — O Método */
+  /* Botão primário */
   .btn-metodo {
     display: flex;
     align-items: center;
@@ -156,7 +162,7 @@
   .btn-metodo:hover::before { opacity: 1; }
   .btn-metodo:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(195,155,55,0.4); }
 
-  /* Botão secundário — Quem sou */
+  /* Botão secundário */
   .btn-quem {
     display: flex;
     align-items: center;
@@ -180,15 +186,6 @@
     transform: translateY(-2px);
   }
 
-  /* ── DIVISOR ENTRE BOTÕES ── */
-  .ou {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--branco-sutil);
-  }
-
   /* ── ASSINA ── */
   .entrada-assina {
     margin-top: 32px;
@@ -204,22 +201,17 @@
   footer {
     position: relative;
     z-index: 1;
-    padding: 0 24px 16px;
+    padding: 0 24px 20px;
     text-align: center;
     border-top: none;
   }
 
   .footer-logo {
-    margin-top: 0;
-  }
-
-  .footer-logo {
-    width: 200px;
+    width: 180px;
     height: auto;
     object-fit: contain;
-    mix-blend-mode: multiply;
-    filter: brightness(0.95);
-    opacity: 0.9;
+    mix-blend-mode: screen;
+    opacity: 0.75;
   }
 
   /* ── RESPONSIVO ── */
@@ -234,6 +226,11 @@
 <canvas id="particulas"></canvas>
 
 <div class="topo-linha"></div>
+
+<!-- Logo Círculo Estelar topo -->
+<div class="logo-topo">
+  <img src="Logo/logo-circulo-estelar-transparent.png" alt="Círculo Estelar">
+</div>
 
 <div class="wrapper">
 
@@ -250,7 +247,7 @@
   <div class="botoes">
     <a href="pagina-de-vendas.html" class="btn-metodo">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      Conhecer o método
+      Acessar o método
     </a>
     <a href="quem-sou.html" class="btn-quem">
       Quem é Renaty
@@ -315,4 +312,3 @@
 
 </body>
 </html>
-<!-- Mon Apr 27 20:30:03     2026 -->
