@@ -25,6 +25,8 @@
     color: var(--branco);
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
   /* ── PARTÍCULAS ── */
@@ -47,12 +49,12 @@
 
   /* ── WRAPPER CENTRAL ── */
   .wrapper {
-    min-height: calc(100vh - 3px);
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 48px 24px 24px;
+    padding: 48px 24px 0;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -195,16 +197,20 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255,255,255,0.85);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
   /* ── RODAPÉ ── */
   footer {
     position: relative;
     z-index: 1;
-    padding: 0px 24px 20px;
+    padding: 0 24px 16px;
     text-align: center;
     border-top: none;
+  }
+
+  .footer-logo {
+    margin-top: 0;
   }
 
   .footer-logo {
@@ -234,7 +240,7 @@
   <div class="entrada-nome">Renaty Dimon</div>
 
   <!-- Título -->
-  <h1 class="entrada-titulo"><span class="gold">Alta performance</span><br>com leveza.</h1>
+  <h1 class="entrada-titulo"><span class="gold">ALTA PERFORMANCE</span><br>com leveza.</h1>
   <div class="entrada-tag">Mentalidade Inteligente</div>
 
   <!-- Subtítulo -->
