@@ -110,11 +110,13 @@
 
   .foto-wrapper {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 340px;
     max-width: 100%;
-    /* crop quadrado — mostra só da cabeça ao busto */
     height: 340px;
+    background: #111111;
     overflow: hidden;
   }
 
@@ -122,17 +124,16 @@
     content: '';
     position: absolute;
     inset: -1px;
-    background: linear-gradient(160deg, rgba(195,155,55,0.35) 0%, transparent 60%);
+    background: linear-gradient(160deg, rgba(195,155,55,0.20) 0%, transparent 60%);
     z-index: 0;
     pointer-events: none;
   }
 
   .foto-renaty {
-    width: 100%;
+    width: 72%;
     height: auto;
     display: block;
     object-fit: cover;
-    /* puxa a imagem para cima — mostra o rosto e busto, corta as pernas */
     margin-top: 20px;
     filter: brightness(0.92) contrast(1.04);
     position: relative;
