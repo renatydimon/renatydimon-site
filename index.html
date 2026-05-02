@@ -25,8 +25,6 @@
     color: var(--branco);
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
   }
 
   /* ── PARTÍCULAS ── */
@@ -47,68 +45,36 @@
     z-index: 1;
   }
 
-  /* ── LOGO TOPO CÍRCULO ESTELAR ── */
-  .logo-topo {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0 0;
-  }
-
-  .logo-topo img {
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-  }
-
   /* ── WRAPPER CENTRAL ── */
   .wrapper {
-    flex: 1;
+    min-height: calc(100vh - 3px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding: 8px 24px 0;
+    justify-content: center;
+    padding: 60px 24px;
     text-align: center;
     position: relative;
     z-index: 1;
   }
 
+  /* ── LOGO ── */
+  .logo-circulo {
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    filter: brightness(0.95);
+    margin-bottom: 12px;
+  }
+
   /* ── NOME ── */
   .entrada-nome {
-    font-size: clamp(14px, 2vw, 18px);
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 6px;
-  }
-
-  /* ── TÍTULO ── */
-  .entrada-titulo {
-    font-size: clamp(34px, 5.5vw, 64px);
+    font-size: clamp(28px, 4vw, 48px);
     font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -1.5px;
-    color: var(--branco);
-    max-width: 700px;
-    margin-bottom: 16px;
-  }
-
-  .entrada-titulo .linha-pequena {
-    font-size: clamp(22px, 3vw, 36px);
-    font-weight: 700;
     letter-spacing: -0.5px;
-    color: rgba(255,255,255,0.90);
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  .entrada-titulo .gold {
-    color: var(--ambar-claro);
-    text-shadow: 0 0 30px rgba(232,168,76,0.35), 0 0 60px rgba(232,168,76,0.15);
-    display: block;
+    color: var(--branco);
+    margin-bottom: 8px;
   }
 
   /* ── TAG ── */
@@ -118,8 +84,23 @@
     letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--ambar-medio);
-    margin-top: 0;
     margin-bottom: 40px;
+  }
+
+  /* ── TÍTULO ── */
+  .entrada-titulo {
+    font-size: clamp(34px, 5.5vw, 64px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: var(--branco);
+    max-width: 700px;
+    margin-bottom: 16px;
+  }
+
+  .entrada-titulo .gold {
+    color: var(--ambar-claro);
+    text-shadow: 0 0 30px rgba(232,168,76,0.35), 0 0 60px rgba(232,168,76,0.15);
   }
 
   /* ── SUBTÍTULO ── */
@@ -128,7 +109,7 @@
     font-weight: 600;
     color: rgba(255,255,255,0.80);
     max-width: 440px;
-    margin-bottom: 48px;
+    margin-bottom: 64px;
     line-height: 1.7;
   }
 
@@ -141,7 +122,7 @@
     max-width: 360px;
   }
 
-  /* Botão primário */
+  /* Botão primário — O Método */
   .btn-metodo {
     display: flex;
     align-items: center;
@@ -172,7 +153,7 @@
   .btn-metodo:hover::before { opacity: 1; }
   .btn-metodo:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(195,155,55,0.4); }
 
-  /* Botão secundário */
+  /* Botão secundário — Quem sou */
   .btn-quem {
     display: flex;
     align-items: center;
@@ -196,56 +177,41 @@
     transform: translateY(-2px);
   }
 
-  /* Botão WhatsApp */
-  .btn-whats {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background: transparent;
-    color: rgba(255,255,255,0.6);
-    border: 1px solid rgba(255,255,255,0.15);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 15px;
+  /* ── DIVISOR ENTRE BOTÕES ── */
+  .ou {
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    padding: 16px 40px;
-    text-decoration: none;
-    transition: all 0.25s ease;
-  }
-
-  .btn-whats:hover {
-    border-color: rgba(255,255,255,0.35);
-    color: rgba(255,255,255,0.9);
-    transform: translateY(-2px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--branco-sutil);
   }
 
   /* ── ASSINA ── */
   .entrada-assina {
-    margin-top: 32px;
+    margin-top: 56px;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(255,255,255,0.85);
-    margin-bottom: 12px;
   }
 
   /* ── RODAPÉ ── */
   footer {
     position: relative;
     z-index: 1;
-    padding: 0 24px 20px;
+    padding: 32px 24px 40px;
     text-align: center;
-    border-top: none;
+    border-top: 1px solid rgba(255,255,255,0.04);
   }
 
   .footer-logo {
-    width: 180px;
+    width: 200px;
     height: auto;
     object-fit: contain;
-    mix-blend-mode: screen;
-    opacity: 0.75;
+    mix-blend-mode: multiply;
+    filter: brightness(0.95);
+    opacity: 0.9;
   }
 
   /* ── RESPONSIVO ── */
@@ -254,6 +220,25 @@
     .btn-metodo, .btn-quem { font-size: 15px; padding: 18px 28px; }
   }
 </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1714905736178589');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1714905736178589&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 </head>
 <body>
 
@@ -261,18 +246,13 @@
 
 <div class="topo-linha"></div>
 
-<!-- Logo Círculo Estelar topo -->
-<div class="logo-topo">
-  <img src="Logo/logo-circulo-estelar-transparent.png" alt="Círculo Estelar">
-</div>
-
 <div class="wrapper">
 
   <div class="entrada-nome">Renaty Dimon</div>
   <div class="entrada-tag">Mentalidade Inteligente</div>
 
   <!-- Título -->
-  <h1 class="entrada-titulo"><span class="linha-pequena">O teto não é o mercado.</span><span class="gold">É o que opera no invisível.</span></h1>
+  <h1 class="entrada-titulo">Mentalidade. Energia. Resultado.<br><span class="gold">Os três campos, juntos.</span></h1>
 
   <!-- Subtítulo -->
   <p class="entrada-sub">Para o empresário que já domina a estratégia — e está pronto para o que opera além dela.</p>
@@ -281,14 +261,10 @@
   <div class="botoes">
     <a href="pagina-de-vendas.html" class="btn-metodo">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      Acessar o método
+      Conhecer o método
     </a>
     <a href="quem-sou.html" class="btn-quem">
       Quem é Renaty
-    </a>
-    <a href="https://wa.me/5548984287020?text=Ol%C3%A1%20Renaty%2C%20quero%20saber%20mais%20sobre%20o%20m%C3%A9todo." class="btn-whats" target="_blank">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.524 5.855L.057 23.428a.75.75 0 0 0 .921.921l5.573-1.467A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.66-.524-5.17-1.434l-.36-.215-3.732.982.998-3.648-.235-.374A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-      Falar no WhatsApp
     </a>
   </div>
 
@@ -318,16 +294,16 @@
   function createParticle() {
     return {
       x: rand(0, W), y: rand(0, H),
-      r: rand(0.6, 2.2),
-      vx: rand(-0.2, 0.2), vy: rand(-0.35, -0.08),
-      alpha: rand(0.25, 0.7),
+      r: rand(0.4, 1.4),
+      vx: rand(-0.15, 0.15), vy: rand(-0.25, -0.05),
+      alpha: rand(0.05, 0.25),
       color: Math.random() > 0.5 ? '195,155,55' : '232,168,76'
     };
   }
 
   function init() {
     resize();
-    particles = Array.from({ length: 150 }, createParticle);
+    particles = Array.from({ length: 90 }, createParticle);
   }
 
   function draw() {

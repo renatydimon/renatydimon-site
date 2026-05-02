@@ -83,18 +83,18 @@
 
   .header-nome {
     font-size: clamp(18px, 3vw, 24px);
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 1px;
-    color: rgba(255,255,255,0.90);
+    color: rgba(255,255,255,0.55);
     margin-bottom: 6px;
   }
 
   .header-tag {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: var(--ambar-medio);
+    color: rgba(195,155,55,0.5);
   }
 
   /* ── FOTO BLOCO ── */
@@ -106,20 +106,15 @@
     background: rgba(17,17,17,0.45);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .foto-wrapper {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     width: 340px;
     max-width: 100%;
+    /* crop quadrado — mostra só da cabeça ao busto */
     height: 340px;
-    background: #111111;
     overflow: hidden;
   }
 
@@ -127,22 +122,21 @@
     content: '';
     position: absolute;
     inset: -1px;
-    background: linear-gradient(160deg, rgba(195,155,55,0.20) 0%, transparent 60%);
+    background: linear-gradient(160deg, rgba(195,155,55,0.35) 0%, transparent 60%);
     z-index: 0;
     pointer-events: none;
   }
 
   .foto-renaty {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
     object-fit: cover;
-    object-position: center 5%;
+    /* puxa a imagem para cima — mostra o rosto e busto, corta as pernas */
+    margin-top: -20px;
     filter: brightness(0.92) contrast(1.04);
     position: relative;
     z-index: 1;
-    transition: none;
-    animation: none;
   }
 
   .foto-nome {
@@ -167,7 +161,7 @@
     align-items: center;
     gap: 16px;
     max-width: 480px;
-    margin: 0 auto 20px;
+    margin: 0 auto 80px;
     padding: 0 24px;
   }
   .sep-linha { flex: 1; height: 1px; background: rgba(195,155,55,0.15); }
@@ -177,7 +171,7 @@
   .historia {
     max-width: 720px;
     margin: 0 auto;
-    padding: 0 24px 40px;
+    padding: 0 24px 96px;
     background: rgba(17,17,17,0.45);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
@@ -185,13 +179,12 @@
   }
 
   .historia-tag {
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--ambar-medio);
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
     text-align: center;
   }
 
@@ -282,7 +275,6 @@
     transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
-    white-space: nowrap;
   }
 
   .btn-cta::before {
@@ -329,6 +321,25 @@
     .historia p:first-of-type { font-size: 18px; }
   }
 </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1714905736178589');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1714905736178589&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 </head>
 <body>
 
@@ -346,9 +357,9 @@
 <!-- ── FOTO ── -->
 <div class="foto-bloco">
   <div class="foto-wrapper">
-    <img src="Postagens/banco-de-capas/pb-editorial/pb-editorial-02.png" alt="Renaty Dimon" class="foto-renaty" loading="eager" decoding="sync">
+    <img src="Postagens/banco-de-capas/pb-editorial/pb-editorial-02.png" alt="Renaty Dimon" class="foto-renaty">
   </div>
-  <div class="foto-titulo" style="color:#FFFFFF;">Mentora Energética e de Mentalidade</div>
+  <div class="foto-titulo">Mentora de <span style="color:#E8A84C;font-weight:700;">Energia</span> e <span style="color:#E8A84C;font-weight:700;">Mentalidade</span></div>
 </div>
 
 <!-- ── SEPARADOR ── -->
@@ -386,17 +397,17 @@
 <!-- ── CTA FINAL ── -->
 <div class="cta-final">
   <h2 class="cta-titulo">Quando você estiver pronto,<br>o caminho começa <span class="gold">aqui.</span></h2>
-  <p class="cta-sub">Quando o visível e o invisível operam juntos, o extraordinário deixa de ser exceção.</p>
+  <p class="cta-sub">O mesmo princípio que trouxe esse resultado está disponível para o seu negócio.</p>
   <a href="pagina-de-vendas.html" class="btn-cta">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    Acessar o método
+    <span>Conhecer o método<span style="display:block;font-size:11px;font-weight:400;opacity:0.7;margin-top:2px;">sem compromisso — só clareza</span></span>
   </a>
   <p class="cta-assina">⚜️ O extraordinário já está disponível. Agora é só escolher.</p>
 </div>
 
 <!-- ── RODAPÉ ── -->
 <footer>
-  <a href="https://www.instagram.com/renatydimon" target="_blank" style="font-size:18px;font-weight:700;color:#C39B37;letter-spacing:3px;text-decoration:none;" onmouseover="this.style.color='#E8A84C'" onmouseout="this.style.color='#C39B37'">@renatydimon</a>
+  <a href="https://www.instagram.com/renatydimon" target="_blank" style="font-size:13px;color:rgba(195,155,55,0.6);letter-spacing:2px;text-decoration:none;" onmouseover="this.style.color='#C39B37'" onmouseout="this.style.color='rgba(195,155,55,0.6)'">@renatydimon</a>
 </footer>
 
 <!-- ── PARTÍCULAS ── -->
