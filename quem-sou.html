@@ -83,18 +83,18 @@
 
   .header-nome {
     font-size: clamp(18px, 3vw, 24px);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.90);
     margin-bottom: 6px;
   }
 
   .header-tag {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: rgba(195,155,55,0.5);
+    color: var(--ambar-medio);
   }
 
   /* ── FOTO BLOCO ── */
@@ -106,15 +106,20 @@
     background: rgba(17,17,17,0.45);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .foto-wrapper {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 340px;
     max-width: 100%;
-    /* crop quadrado — mostra só da cabeça ao busto */
     height: 340px;
+    background: #111111;
     overflow: hidden;
   }
 
@@ -122,21 +127,22 @@
     content: '';
     position: absolute;
     inset: -1px;
-    background: linear-gradient(160deg, rgba(195,155,55,0.35) 0%, transparent 60%);
+    background: linear-gradient(160deg, rgba(195,155,55,0.20) 0%, transparent 60%);
     z-index: 0;
     pointer-events: none;
   }
 
   .foto-renaty {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     object-fit: cover;
-    /* puxa a imagem para cima — mostra o rosto e busto, corta as pernas */
-    margin-top: -20px;
+    object-position: center 5%;
     filter: brightness(0.92) contrast(1.04);
     position: relative;
     z-index: 1;
+    transition: none;
+    animation: none;
   }
 
   .foto-nome {
@@ -161,7 +167,7 @@
     align-items: center;
     gap: 16px;
     max-width: 480px;
-    margin: 0 auto 80px;
+    margin: 0 auto 20px;
     padding: 0 24px;
   }
   .sep-linha { flex: 1; height: 1px; background: rgba(195,155,55,0.15); }
@@ -171,7 +177,7 @@
   .historia {
     max-width: 720px;
     margin: 0 auto;
-    padding: 0 24px 96px;
+    padding: 0 24px 40px;
     background: rgba(17,17,17,0.45);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
@@ -179,12 +185,13 @@
   }
 
   .historia-tag {
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--ambar-medio);
-    margin-bottom: 48px;
+    margin-top: 40px;
+    margin-bottom: 40px;
     text-align: center;
   }
 
@@ -275,6 +282,7 @@
     transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
   }
 
   .btn-cta::before {
@@ -357,9 +365,9 @@ src="https://www.facebook.com/tr?id=1714905736178589&ev=PageView&noscript=1"
 <!-- ── FOTO ── -->
 <div class="foto-bloco">
   <div class="foto-wrapper">
-    <img src="Postagens/banco-de-capas/pb-editorial/pb-editorial-02.png" alt="Renaty Dimon" class="foto-renaty">
+    <img src="Postagens/banco-de-capas/pb-editorial/pb-editorial-02.png" alt="Renaty Dimon" class="foto-renaty" loading="eager" decoding="sync">
   </div>
-  <div class="foto-titulo">Mentora de <span style="color:#E8A84C;font-weight:700;">Energia</span> e <span style="color:#E8A84C;font-weight:700;">Mentalidade</span></div>
+  <div class="foto-titulo" style="color:#FFFFFF;">Mentora Energética e de Mentalidade</div>
 </div>
 
 <!-- ── SEPARADOR ── -->
@@ -397,17 +405,17 @@ src="https://www.facebook.com/tr?id=1714905736178589&ev=PageView&noscript=1"
 <!-- ── CTA FINAL ── -->
 <div class="cta-final">
   <h2 class="cta-titulo">Quando você estiver pronto,<br>o caminho começa <span class="gold">aqui.</span></h2>
-  <p class="cta-sub">O mesmo princípio que trouxe esse resultado está disponível para o seu negócio.</p>
+  <p class="cta-sub">Quando o visível e o invisível operam juntos, o extraordinário deixa de ser exceção.</p>
   <a href="pagina-de-vendas.html" class="btn-cta">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    <span>Conhecer o método<span style="display:block;font-size:11px;font-weight:400;opacity:0.7;margin-top:2px;">sem compromisso — só clareza</span></span>
+    Acessar o método
   </a>
   <p class="cta-assina">⚜️ O extraordinário já está disponível. Agora é só escolher.</p>
 </div>
 
 <!-- ── RODAPÉ ── -->
 <footer>
-  <a href="https://www.instagram.com/renatydimon" target="_blank" style="font-size:13px;color:rgba(195,155,55,0.6);letter-spacing:2px;text-decoration:none;" onmouseover="this.style.color='#C39B37'" onmouseout="this.style.color='rgba(195,155,55,0.6)'">@renatydimon</a>
+  <a href="https://www.instagram.com/renatydimon" target="_blank" style="font-size:18px;font-weight:700;color:#C39B37;letter-spacing:3px;text-decoration:none;" onmouseover="this.style.color='#E8A84C'" onmouseout="this.style.color='#C39B37'">@renatydimon</a>
 </footer>
 
 <!-- ── PARTÍCULAS ── -->
